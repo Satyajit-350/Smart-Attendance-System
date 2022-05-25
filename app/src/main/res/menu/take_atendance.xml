@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/recognition_list"
+        android:title="View Recognition List"/>
+
+    <item android:id="@+id/update_recognition_list"
+        android:title="Update Recognition List"/>
+
+    <item android:id="@+id/save_recogntion"
+        android:title="Save Recognition"/>
+
+    <item android:id="@+id/load_recognition"
+        android:title="Load Recognition"/>
+
+    <item android:id="@+id/clear_all_recognition"
+        android:title="Clear Recognition"/>
+
+
+</menu>

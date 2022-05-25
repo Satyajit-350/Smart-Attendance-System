@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/SmartAttendance/app/src/main/res/drawable-v24/custom_dialog_background.xml" value="0.173" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/SmartAttendance/app/src/main/res/drawable-v24/ic_success_24.xml" value="0.173" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/SmartAttendance/app/src/main/res/drawable/buttonstyle2.xml" value="0.173" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/SmartAttendance/app/src/main/res/drawable/fase_background.xml" value="0.173" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/SmartAttendance/app/src/main/res/drawable/ic_lock_outline_black_24dp.xml" value="0.173" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/SmartAttendance/app/src/main/res/drawable/ic_login_hero.xml" value="0.173" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/SmartAttendance/app/src/main/res/drawable/profile_background.xml" value="0.173" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/SmartAttendance/app/src/main/res/font/.xml" value="0.284375" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/SmartAttendance/app/src/main/res/layout/activity_attendance.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/SmartAttendance/app/src/main/res/layout/activity_edit_profile.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/SmartAttendance/app/src/main/res/layout/activity_face_recogntion.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/SmartAttendance/app/src/main/res/layout/activity_learn_more.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/SmartAttendance/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/SmartAttendance/app/src/main/res/layout/activity_profile.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/SmartAttendance/app/src/main/res/layout/activity_sign_in.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/SmartAttendance/app/src/main/res/layout/activity_sign_up.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/SmartAttendance/app/src/main/res/layout/activity_splash_screen.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/SmartAttendance/app/src/main/res/layout/attendance_list.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/SmartAttendance/app/src/main/res/layout/custom_dialog.xml" value="0.253125" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/SmartAttendance/app/src/main/res/layout/ic_success_24.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/SmartAttendance/app/src/main/res/menu/attendance_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/SmartAttendance/app/src/main/res/menu/menu_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/SmartAttendance/app/src/main/res/menu/take_atendance.xml" value="0.25416666666666665" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
