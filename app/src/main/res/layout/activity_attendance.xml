@@ -8,10 +8,35 @@
     android:background="@color/browser_actions_bg_grey"
     tools:context=".Attendance.AttendanceActivity">
 
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="3dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/shimmer_layout"/>
+        <include layout="@layout/shimmer_layout"/>
+        <include layout="@layout/shimmer_layout"/>
+        <include layout="@layout/shimmer_layout"/>
+        <include layout="@layout/shimmer_layout"/>
+        <include layout="@layout/shimmer_layout"/>
+        <include layout="@layout/shimmer_layout"/>
+        <include layout="@layout/shimmer_layout"/>
+        <include layout="@layout/shimmer_layout"/>
+
+    </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:visibility="invisible"
         tools:listitem="@layout/attendance_list"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -23,6 +48,15 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_margin="15dp"
-        app:srcCompat="@android:drawable/ic_menu_camera" />
+        android:src="@drawable/ic_camera_alt_24"/>
+
+    <ImageView
+        android:id="@+id/empty_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/empty_data"
+        android:visibility="gone"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

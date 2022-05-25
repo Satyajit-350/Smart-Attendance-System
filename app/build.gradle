@@ -47,6 +47,9 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.8'
     implementation 'com.airbnb.android:lottie:5.0.3'
 
+    //shimmer effect dependency
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
     implementation 'com.google.mlkit:face-detection:16.1.5'
     // CameraX core library using the camera2 implementation
     def camerax_version = "1.2.0-alpha01"

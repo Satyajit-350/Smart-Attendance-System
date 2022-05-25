@@ -32,5 +32,6 @@
     <color name="description_text">#656565</color>
 
     <color name="blue">#0037FF</color>
+    <color name="shimmer_color">#B5B5B5</color>
 
 </resources>

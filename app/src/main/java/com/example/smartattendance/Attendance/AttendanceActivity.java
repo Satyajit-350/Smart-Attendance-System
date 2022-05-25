@@ -26,6 +26,7 @@ import com.example.smartattendance.Model.UploadFile;
 import com.example.smartattendance.R;
 import com.example.smartattendance.databinding.ActivityAttendanceBinding;
 import com.example.smartattendance.db.DBHelper;
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -46,7 +47,7 @@ import java.util.List;
 
 public class AttendanceActivity extends AppCompatActivity {
 
-    private ActivityAttendanceBinding binding;
+   private ActivityAttendanceBinding binding;
     private ArrayList<StudentModel> studentList;
     private DBHelper dbHelper;
     DatabaseReference  databaseReference ;
@@ -60,6 +61,9 @@ public class AttendanceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityAttendanceBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        //start the shimmer effect
+        binding.shimmer.startShimmer();
 
         uploadFiles = new ArrayList<>();
         viewAllFiles();
@@ -84,6 +88,10 @@ public class AttendanceActivity extends AppCompatActivity {
     }
 
     private void viewAllFiles() {
+        binding.emptyView.setVisibility(View.GONE);
+        binding.shimmer.startShimmer();
+        binding.shimmer.setVisibility(View.VISIBLE);
+        binding.listView.setVisibility(View.VISIBLE);
         databaseReference = FirebaseDatabase.getInstance().getReference().child("uploads");
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -94,8 +102,16 @@ public class AttendanceActivity extends AppCompatActivity {
                     uploadFile.getData(postSnapshot.getKey());
                     uploadFiles.add(uploadFile);
                 }
+                if(uploadFiles.size()==0){
+                    binding.shimmer.stopShimmer();;
+                    binding.emptyView.setVisibility(View.VISIBLE);
+                }else{
+                    binding.emptyView.setVisibility(View.GONE);
+                }
                 adapter.notifyDataSetChanged();
-                Toast.makeText(AttendanceActivity.this, "Data Load", Toast.LENGTH_SHORT).show();
+                binding.shimmer.stopShimmer();
+                binding.shimmer.setVisibility(View.GONE);
+                Toast.makeText(AttendanceActivity.this, "Data Loaded", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -116,6 +132,7 @@ public class AttendanceActivity extends AppCompatActivity {
         switch(item.getItemId()){
             case R.id.delete:
                 database.getReference().child("uploads").removeValue();
+                binding.emptyView.setVisibility(View.VISIBLE);
                 Toast.makeText(this, "All Attendance deleted", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.export_xl:
