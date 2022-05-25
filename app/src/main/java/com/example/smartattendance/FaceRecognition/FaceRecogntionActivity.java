@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Build;
 import android.os.Bundle;
 
+import com.example.smartattendance.Model.StudentModel;
 import com.example.smartattendance.Model.UploadFile;
 import com.example.smartattendance.Model.Users;
 import com.example.smartattendance.R;
@@ -58,6 +59,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.smartattendance.db.DBHelper;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -137,6 +139,7 @@ public class FaceRecogntionActivity extends AppCompatActivity {
 
     private List<String> arraylist;
     private FirebaseDatabase database;
+    private DBHelper dbHelper;
 
     String modelFile="mobile_face_net.tflite"; //model name
     private HashMap<String, SimilarityClassifier.Recognition> registered = new HashMap<>(); //saved Faces
@@ -160,6 +163,7 @@ public class FaceRecogntionActivity extends AppCompatActivity {
         arraylist = new ArrayList<>();
         arraylist.clear();
         database = FirebaseDatabase.getInstance();
+        dbHelper = new DBHelper(this);
 
         calendar = Calendar.getInstance();
         String currentDate = new SimpleDateFormat("dd-MM-yy", Locale.getDefault()).format(new Date());
@@ -694,7 +698,6 @@ public class FaceRecogntionActivity extends AppCompatActivity {
         tfLite.runForMultipleInputsOutputs(inputArray, outputMap); //Run model
 
         float distance_local = Float.MAX_VALUE;
-        String id = "0";
         String label = "?";
 
         /**
@@ -735,6 +738,13 @@ public class FaceRecogntionActivity extends AppCompatActivity {
                             UploadFile uploadFile = new UploadFile(user_name,currentDate,currentTime);
                             if(user_name!="Unknown"&&user_name!="No Face Detected!"&&recognize.getText().equals("Add Face")){
                                 database.getReference().child("uploads").child(user_name+"N2bGujnn8SJx4y7jhIw").setValue(uploadFile);
+                                StudentModel studentModel = new StudentModel(user_name,currentDate,currentTime);
+                                long id = dbHelper.insertUser(studentModel);
+                                if(id>0){
+                                    Toast.makeText(this, "Successful", Toast.LENGTH_SHORT).show();
+                                }else {
+                                    Toast.makeText(this, "Fail", Toast.LENGTH_SHORT).show();
+                                }
                                 dialog.show();
                             }
                         }
