@@ -185,36 +185,6 @@ public class FaceRecogntionActivity extends AppCompatActivity {
         okay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-//                if(ContextCompat.checkSelfPermission(MainActivity.this,Manifest.permission.WRITE_EXTERNAL_STORAGE)
-//                        !=PackageManager.PERMISSION_GRANTED){
-//                    ActivityCompat.requestPermissions(MainActivity.this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-//                            0);
-//                }else{
-//                    File path = Environment.getExternalStoragePublicDirectory(
-//                            Environment.DIRECTORY_DOCUMENTS);
-//                    File file = new File(path, "attendance/");
-//                    boolean success = true;
-//                    if (!file.exists()) {
-//                        file.mkdirs();
-//                        try{
-//                            String csv = "attendance/example.csv";
-//                            CSVWriter csvWriter = new CSVWriter(new FileWriter(csv,true));
-//                            String[] header = { "Name", "Date", "Time" };
-//                            csvWriter.writeNext(header);
-//                            String row[] = new String[]{user_name,currentDate,currentTime};
-//                            csvWriter.writeNext(row);
-//                            csvWriter.close();
-//                            Toast.makeText(context, "Data Saved", Toast.LENGTH_SHORT).show();
-//                        }catch (Exception e){
-//                            Log.d("TAG",e.getMessage());
-//                            Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
-//                            e.printStackTrace();
-//                        }
-//
-//                    }
-//
-//                }
                 dialog.dismiss();
             }
         });
@@ -737,7 +707,11 @@ public class FaceRecogntionActivity extends AppCompatActivity {
                             //TODO Firebase
                             UploadFile uploadFile = new UploadFile(user_name,currentDate,currentTime);
                             if(user_name!="Unknown"&&user_name!="No Face Detected!"&&recognize.getText().equals("Add Face")){
+
+                                //Firebase part
                                 database.getReference().child("uploads").child(user_name+"N2bGujnn8SJx4y7jhIw").setValue(uploadFile);
+
+                                //sql part
                                 StudentModel studentModel = new StudentModel(user_name,currentDate,currentTime);
                                 long id = dbHelper.insertUser(studentModel);
                                 if(id>0){
@@ -745,6 +719,7 @@ public class FaceRecogntionActivity extends AppCompatActivity {
                                 }else {
                                     Toast.makeText(this, "Fail", Toast.LENGTH_SHORT).show();
                                 }
+
                                 dialog.show();
                             }
                         }

@@ -53,6 +53,8 @@ public class AttendanceActivity extends AppCompatActivity {
     List<UploadFile> uploadFiles;
     AttendanceAdapter adapter;
 
+    private FirebaseDatabase database;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +66,7 @@ public class AttendanceActivity extends AppCompatActivity {
         adapter = new AttendanceAdapter(this,uploadFiles);
 
         dbHelper = new DBHelper(this);
+        database = FirebaseDatabase.getInstance();
 
         binding.listView.setAdapter(adapter);
 
@@ -112,6 +115,7 @@ public class AttendanceActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch(item.getItemId()){
             case R.id.delete:
+                database.getReference().child("uploads").removeValue();
                 Toast.makeText(this, "All Attendance deleted", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.export_xl:

@@ -21,4 +21,16 @@
     <color name="red">#F44336</color>
     <color name="purple">#5E1A6A</color>
     <color name="purple_shade">#805488</color>
+
+    <color name="start_button">#4c84ff</color>
+    <color name="end_button">#10a3fe</color>
+    <!-- tabIndicators colors -->
+    <color name="tab_indicator">#c0c0c0</color>
+
+    <!--text colors-->
+    <color name="title_text">#000000</color>
+    <color name="description_text">#656565</color>
+
+    <color name="blue">#0037FF</color>
+
 </resources>

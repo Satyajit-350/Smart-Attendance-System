@@ -3,5 +3,7 @@
     <array name="preloaded_fonts" translatable="false">
         <item>@font/amethysta</item>
         <item>@font/baloo_bhai</item>
+        <item>@font/poppins_bold</item>
+        <item>@font/poppins_medium</item>
     </array>
 </resources>
