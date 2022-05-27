@@ -59,6 +59,12 @@ public class DBHelper extends SQLiteOpenHelper {
         return id;
     }
 
+    public void deleteAll() {
+//        db=getWritableDatabase();
+//        db.delete(DatabaseContract.StudentTable.TABLE_NAME,D)
+        context.deleteDatabase(DATABASE_NAME);
+    }
+
     public ArrayList<StudentModel> getAllStudents(){
         db=getReadableDatabase();
         ArrayList<StudentModel>list=new ArrayList<>();

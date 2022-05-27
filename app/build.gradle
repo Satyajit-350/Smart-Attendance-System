@@ -13,7 +13,7 @@ android {
     defaultConfig {
         applicationId "com.example.smartattendance"
         minSdk 21
-        targetSdk 27
+        targetSdk 32
         versionCode 1
         versionName "1.0"
 
@@ -44,13 +44,17 @@ dependencies {
     implementation 'com.google.android.gms:play-services-auth:20.2.0'
     implementation 'com.google.firebase:firebase-storage:20.0.1'
 
+    //picasso Dependency
     implementation 'com.squareup.picasso:picasso:2.8'
+    //Lottie animation dependency
     implementation 'com.airbnb.android:lottie:5.0.3'
 
     //shimmer effect dependency
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
 
+    //MLKit dependency
     implementation 'com.google.mlkit:face-detection:16.1.5'
+
     // CameraX core library using the camera2 implementation
     def camerax_version = "1.2.0-alpha01"
     // The following line is optional, as the core library is included indirectly by camera-camera2
@@ -69,14 +73,14 @@ dependencies {
 
     implementation 'com.google.code.gson:gson:2.9.0'
 
+    //tenserFlow dependency
     implementation 'org.tensorflow:tensorflow-lite:2.9.0'
     implementation 'org.tensorflow:tensorflow-lite-gpu:2.9.0'
     implementation 'org.tensorflow:tensorflow-lite-support:0.4.0'
 
+    //dependency for exel sheet conversion
     implementation 'org.apache.poi:poi:4.0.0'
     implementation 'org.apache.poi:poi-ooxml:4.0.0'
-
-    implementation 'com.opencsv:opencsv:4.1'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
