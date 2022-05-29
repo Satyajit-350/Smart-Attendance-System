@@ -65,19 +65,23 @@ public class SignInActivity extends AppCompatActivity {
                 dialog.show();
                 String email = binding.editTextEmail.getText().toString();
                 String password = binding.editTextPassword.getText().toString();
-                mAuth.signInWithEmailAndPassword(email,password)
-                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                dialog.dismiss();
-                                if(task.isSuccessful()){
-                                    Intent intent = new Intent(SignInActivity.this, MainActivity.class);
-                                    startActivity(intent);
-                                }else{
-                                    Toast.makeText(SignInActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                if(email.isEmpty()||password.isEmpty()){
+                    Toast.makeText(SignInActivity.this, "Please fill up the fields", Toast.LENGTH_SHORT).show();
+                }else{
+                    mAuth.signInWithEmailAndPassword(email,password)
+                            .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    dialog.dismiss();
+                                    if(task.isSuccessful()){
+                                        Intent intent = new Intent(SignInActivity.this, MainActivity.class);
+                                        startActivity(intent);
+                                    }else{
+                                        Toast.makeText(SignInActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                    }
                                 }
-                            }
-                        });
+                            });
+                }
             }
         });
 

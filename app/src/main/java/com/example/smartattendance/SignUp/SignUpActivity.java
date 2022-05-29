@@ -63,27 +63,32 @@ public class SignUpActivity extends AppCompatActivity {
                 String password = binding.editTextPassword.getText().toString();
 
                 // TODO add validation
+                if(name.isEmpty()||email.isEmpty()||phone.isEmpty()||password.isEmpty()){
+                    Toast.makeText(SignUpActivity.this, "Fill up the fields", Toast.LENGTH_SHORT).show();
+                }else{
+                    mAuth.createUserWithEmailAndPassword(email,password)
+                            .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    dialog.dismiss();
+                                    if(task.isSuccessful()){
+                                        Users users = new Users(name,email,phone,password);
+                                        String  id = task . getResult (). getUser (). getUid ();
+                                        database.getReference().child("Users").child(id).setValue(users);
 
-                mAuth.createUserWithEmailAndPassword(email,password)
-                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                dialog.dismiss();
-                                if(task.isSuccessful()){
-                                    Users users = new Users(name,email,phone,password);
-                                    String  id = task . getResult (). getUser (). getUid ();
-                                    database.getReference().child("Users").child(id).setValue(users);
+                                        Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
 
-                                    Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
-
-                                    Toast.makeText(SignUpActivity.this, "Account Created Successfully",
-                                            Toast.LENGTH_SHORT).show();
-                                }else{
-                                    Toast.makeText(SignUpActivity.this, task.getException().getMessage(),
-                                            Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(SignUpActivity.this, "Account Created Successfully",
+                                                Toast.LENGTH_SHORT).show();
+                                    }else{
+                                        Toast.makeText(SignUpActivity.this, task.getException().getMessage(),
+                                                Toast.LENGTH_SHORT).show();
+                                    }
                                 }
-                            }
-                        });
+                            });
+                }
+
+
             }
         });
 
@@ -174,8 +179,5 @@ public class SignUpActivity extends AppCompatActivity {
 
                     }
                 });
-    }
-    private void validation(){
-        // ALL
     }
 }
