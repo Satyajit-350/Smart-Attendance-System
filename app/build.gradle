@@ -13,7 +13,7 @@ android {
     defaultConfig {
         applicationId "com.example.smartattendance"
         minSdk 21
-        targetSdk 32
+        targetSdk 27
         versionCode 1
         versionName "1.0"
 
