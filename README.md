@@ -19,3 +19,28 @@ Automatic Facial Recognition is a competent biometrics technology that is used i
 * 3rd party Libraries - To improve UX.
 
 ## FLOW DIAGRAM
+<p align = "center">
+<img src = "https://github.com/Satyajit-350/Smart-Attendance-System/blob/master/Screenshots/Blank%20board.png" height="400">
+ </p>
+ 
+ ## INSTALLATION 
+ Use Import from Version Control in Android Studio or Clone repo and open the project in Android Studio.
+ ```bash
+git clone git@github.com:Satyajit-350/Smart-Attendance-System.git
+```
+## SCREENSHOTS
+
+<img src="https://github.com/Satyajit-350/Smart-Attendance-System/blob/master/Screenshots/IMG_20220529_093838.jpg" height="270">   <img src="https://github.com/Satyajit-350/Smart-Attendance-System/blob/master/Screenshots/IMG_20220529_094301.jpg" height="270">   <img src="https://github.com/Satyajit-350/Smart-Attendance-System/blob/master/Screenshots/IMG_20220529_094229.jpg" height="270">    <img src="https://github.com/Satyajit-350/Smart-Attendance-System/blob/master/Screenshots/IMG_20220529_094241.jpg" height="270"> <img src="https://github.com/Satyajit-350/Smart-Attendance-System/blob/master/Screenshots/IMG_20220529_093857.jpg" height="270">  <img src="https://github.com/Satyajit-350/Smart-Attendance-System/blob/master/Screenshots/IMG_20220529_094059.jpg" height="270">  <img src="https://github.com/Satyajit-350/Smart-Attendance-System/blob/master/Screenshots/IMG_20220529_094215.jpg" height="270">  &nbsp;
+
+## MACHINE LEARNING MODEL DETAILS
+- MobileFaceNet : [Research Paper](https://arxiv.org/ftp/arxiv/papers/1804/1804.07573.pdf)
+- [Implementation](https://github.com/sirius-ai/MobileFaceNet_TF)
+
+## REFERENCES
+
+* https://developers.google.com/ml-kit/vision/face-detection/android
+* https://www.tensorflow.org/lite/android
+
+## REQUIREMENTS
+* For better experience run the application on Android 10 or above.
+* If the Exel sheet formation is not working, reduce the API level to 27.
