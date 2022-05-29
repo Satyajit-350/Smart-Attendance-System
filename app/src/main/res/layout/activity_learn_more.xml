@@ -38,7 +38,7 @@ weaknesses and strengths. Some use flesh tones, some use contours, and other are
 even more complex involving templates, neural networks, or filters. These algorithms
 suffer from the same problem; they are computationally expensive. An image is only a
 collection of color or light intensity values. Analyzing these pixels for face detection is
-time consuming and difficult to accomplish because of the wide variations of shape and
+time consuming and difficult to accomplish because of the wide variations of shape
 "
             android:textColor="@color/black"
             android:textSize="22dp" />
@@ -50,15 +50,7 @@ time consuming and difficult to accomplish because of the wide variations of sha
             android:layout_height="wrap_content"
             android:layout_margin="30dp"
             android:fontFamily="sans-serif-condensed"
-            android:text="      In this system we tend to use Haar Classifier provided by OpenCV (Opensource
-Computer Vision), Object Detection using Haar feature-based cascade classifiers is an
-effective object detection method proposed by Paul Viola and Michael Jones. It is a
-machine learning based approach where a cascade function is trained from a lot of
-positive and negative images. OpenCV provides both trainer as well as detector which
-makes the integration of the Face Recognition system easier. The system will mark the
-attendance within the the excel sheet and the following excel sheet will be uploaded on
-to the Google Firebase Cloud system so the same uploaded data can also be accessed
-by other authorized users via Android application."
+            android:text="@string/detail"
             android:textColor="@color/black"
             android:textSize="22dp" />
     </LinearLayout>
