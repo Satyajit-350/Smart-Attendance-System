@@ -66,6 +66,7 @@ public class SignInActivity extends AppCompatActivity {
                 String email = binding.editTextEmail.getText().toString();
                 String password = binding.editTextPassword.getText().toString();
                 if(email.isEmpty()||password.isEmpty()){
+                    dialog.dismiss();
                     Toast.makeText(SignInActivity.this, "Please fill up the fields", Toast.LENGTH_SHORT).show();
                 }else{
                     mAuth.signInWithEmailAndPassword(email,password)

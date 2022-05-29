@@ -64,6 +64,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                 // TODO add validation
                 if(name.isEmpty()||email.isEmpty()||phone.isEmpty()||password.isEmpty()){
+                    dialog.dismiss();
                     Toast.makeText(SignUpActivity.this, "Fill up the fields", Toast.LENGTH_SHORT).show();
                 }else{
                     mAuth.createUserWithEmailAndPassword(email,password)
