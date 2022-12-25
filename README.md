@@ -43,4 +43,4 @@ git clone git@github.com:Satyajit-350/Smart-Attendance-System.git
 
 ## REQUIREMENTS
 * For better experience run the application on Android 10 or above.
-* If the Exel sheet formation is not working, reduce the API level to 27.
+* If the Excel sheet formation is not working, reduce the API level to 27.
